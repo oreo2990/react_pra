@@ -5,6 +5,7 @@ import React,{useState} from 'react';
 
 
 function App() {
+  // カウンターのstate変数
   const [count,setCount] = useState(0)
   const countUp = ()=>{
     setCount(prevState => prevState + 1)
@@ -13,7 +14,12 @@ function App() {
     setCount(prevState => prevState - 1)
   }
 
+  // ON/OFF切り替えのstate変数
+  const [open,setOpen]=useState(false);
 
+  const toggle = () =>{
+    setOpen(prevState => !prevState)
+  }
 
   return (
     <div className="App">
@@ -35,6 +41,9 @@ function App() {
         <button onClick={countUp}>up</button>
         <button onClick={countDown}>down</button>
   
+        <br/>
+        <button onClick={toggle}>{open ? 'OPEN':'CLOSE'}</button>
+        
 
         <a
           className="App-link"
