@@ -13,6 +13,9 @@ function App() {
   const countDown = ()=>{
     setCount(prevState => prevState - 1)
   }
+  const countReset = ()=>{
+    setCount(0)
+  }
 
   // ON/OFF切り替えのstate変数
   const [open,setOpen]=useState(false);
@@ -40,6 +43,7 @@ function App() {
         <p>現在のカウント数:{count}</p>
         <button onClick={countUp}>up</button>
         <button onClick={countDown}>down</button>
+        <button onClick={countReset}>reset</button>
   
         <br/>
         <button onClick={toggle}>{open ? 'OPEN':'CLOSE'}</button>
